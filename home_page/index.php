@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="it">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foundation | Welcome</title>
+  <title>Musicando | Home</title>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
 
@@ -19,9 +19,10 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="#">Negozio</a></li>
-        <li><a href="#">Spettacoli</a></li>
-        <li><a href="#">Contatti</a></li>
+        <li><a href="negozio/">Negozio</a></li>
+        <li><a href="spettacoli/">Spettacoli</a></li>
+        <li><a href="contatti/">Contatti</a></li>
+        <li><a href="login/">Login</a></li>
       </ul>
     </div>
   </div>
