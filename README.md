@@ -1,10 +1,10 @@
-# Estate in Festa
+# :sunny: Estate in Festa :sunny:
 
-### Informazioni generali
+### Informazioni generali 🏝️
 ___________________________________
 
 Contenitore per l'organizzazione della documentazione della piattaforma *"Un estate in festa, estate 2021"*.
-
+⛵🎵⛵🎵⛵🎵⛵🎵⛵🎵⛵🎵 
 ### Articolazione della piattaforma
 ________________________________________
 La piattaforma sarà composta dai seguenti componenti:
@@ -22,13 +22,13 @@ Parte centrale della piattaforma, il sito web permette agli utenti di accedere a
 
 Il sito web è accedibile dal seguente link: [http://estateinmusica.altervista.org](http://estateinmusica.altervista.org/):link:
 
-### Server Email
+### Server Email 
 __________________________
 
 Il server email IMAP si occuperà dell'inoltro delle email tra i vari clienti della piattaforma, tale componente non è interna alla piattaforma ma utilizzato in modalità hosting tramite la rete Internet.
 
 
-###  Script email
+###  Script email ✉️
 ___________________________
 
 lo script email elimina la necessità della piattaforma di possedere un server email autonomo installato su una macchina fisica, rappresentato una soluzione al quanto leggera per permettere alla piattaforma di inviare email.
@@ -36,13 +36,13 @@ lo script email elimina la necessità della piattaforma di possedere un server e
 Il codice della  script implementato nel linguaggio PHP è accessibile dal repository del progetto o da questi link: :link:
 
 
-### Base di dati
+### Base di dati 🖥️
 _______________________________
 
 La base di dati rappresenta l'elemento centrale del sistema informativo della piattaforma, mentre gli altri componenti si occupano di raccoglie i dati della piattaforma il database si occupa della loro organizzazione rendendoli al contempo disponibili a tutti gli altri componenti qual'ora fossero richiesti
 
 
-### Intranet
+### Intranet 🕸️
 _______________
 
 [ciscoLogo]()
