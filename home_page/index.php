@@ -19,7 +19,7 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="/">Home</a></li>
+        <li><a href="http://localhost/Estate-in-Festa/home_page/">Home</a></li>
         <li><a href="negozio/">Negozio</a></li>
         <li><a href="spettacoli/">Spettacoli</a></li>
         <li><a href="contatti/">Contatti</a></li>
