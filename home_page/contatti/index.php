@@ -39,9 +39,13 @@
   <div class="row" id="content">
     <div class="medium-8 columns">
       <div class="blog-post">
-        <h3><!-- mettere qualcosa qui .... --></h3>
-        <img class="thumbnail" src="resurce/logo.png">
+        <h3>Rimaniamo in contatto!</h3>
+        <img class="thumbnail" src="resurces/logo.jpg" hight= '100' width= '100'>
         <p>
+		<br>
+		Se hai dubbi, problemi o ti servono informaioni
+		non esitare a contattarcia via email o chiama i nostri consenter
+		per tutto ciò che ti occorre
         </p>
         <div class="callout">
           <ul class="menu simple">
