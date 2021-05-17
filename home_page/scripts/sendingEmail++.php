@@ -1,6 +1,7 @@
 <?php  
 	
-	$_from = $_POST['from'];
+	#$_from = $_POST['from'];
+	$_from = 'axx@null.net';
 	$_to =  'pizziandrea9@gmail.com';
 	$_message = "<p>Thank to buy the tikets, get it</p>";
 	$_object = "Test email";
