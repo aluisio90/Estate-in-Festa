@@ -45,7 +45,7 @@ La base di dati rappresenta l'elemento centrale del sistema informativo della pi
 ### Intranet 🕸️
 _______________
 
-[ciscoLogo]()
+[repo.png](repo.png)
 Ovviamente tutta la piattaforma sarà supportata da una infrastruttura di rete composta dai moderni apparati CISCO, azienda leader mondiale nell'ambito del networking
 
 Per tanto tutti gli apparati intermedi come switch e router e gli apparati deticati alla sola sicurezza perimetrale come firewall saranno scelti tra l'ampio catalogo dei CISCO device famosi per il loro sistema operativo Cisco IOS (IOS) e gli elevati standard di sicurezza del software che li contradistinguono al fine di garantire:
