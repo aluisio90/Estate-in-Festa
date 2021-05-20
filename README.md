@@ -31,7 +31,7 @@ Il server email IMAP si occuperà dell'inoltro delle email tra i vari clienti de
 ###  Script email ✉️
 ___________________________
 
-lo script email elimina la necessità della piattaforma di possedere un server email autonomo installato su una macchina fisica, rappresentato una soluzione al quanto leggera per permettere alla piattaforma di inviare email.
+lo script email elimina la necessità della piattaforma di possedere un server email autonomo installato su una macchina fisica, rappresentatando una soluzione al quanto leggera per permettere alla piattaforma di inviare email.
 
 Il codice della  script implementato nel linguaggio PHP è accessibile dal repository del progetto o da questi link: :link:
 
