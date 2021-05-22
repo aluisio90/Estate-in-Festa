@@ -74,11 +74,11 @@ CREATE TABLE BRANI(
 );
 
 CREATE TABLE PROGRAMMATI(
-	Ordine INT(4) DEFAULT 1,
-	Codice_Concerto INT(8),
-	Codice_Brano INT(8),
+	Ordine INT(4) NOT NULL,
+	Codice_Concerto INT(8) NOT NULL,
+	Codice_Brano INT(8)NOT NULL,
 	
-	PRIMARY KEY( Codice_Concerto, Codice_Brano),
+	PRIMARY KEY( Codice_Concerto, Codice_Brano, Ordine),
 	
 	FOREIGN KEY (Codice_Concerto) REFERENCES CONCERTI(Codice_Concerto) ON UPDATE CASCADE,
 	FOREIGN KEY (Codice_Brano) REFERENCES BRANI(Codice_Brano) ON DELETE CASCADE
