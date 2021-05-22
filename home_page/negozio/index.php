@@ -78,12 +78,12 @@
   <div class="row small-up-1 medium-up-2 large-up-3">
     <!-- inizio box informativo-->
     <?php 
-        $_db = new mysqli('localhost', 'root', 'pass', 'Estate_in_Festa');
+        $_db = mysqli_connect('my_estateinmusica');
 
-        if ($_db->connect_errno) {
+        if (mysqli_connect_error($_db) ) {
           die("<h1> impossible start connection</h1>");
         }
-        
+        mysqli_select_db($_db, 'my_estateinmusica');
           $query = "
             SELECT 
           PRENOTATE.Data_Prenotazione,
@@ -107,16 +107,15 @@
           TELEFONI.Codice_Sala = SALE_CONCERTI.Codice_Sala; 
           ";
         
-          if(!$_r = $_db->query($query) ){
-            die ('<h1>Errore interno</h1>');
-          }
-          $_db->close();
+          $_r = mysqli_query($_db, $query); 
+            echo gettype($_r);
+          mysqli_close($_db);
 
 
 
 
 
-    while( $row = $_r->fetch_assoc()){
+    while( $row = mysqli_fetch_assoc($_r)){
      
       echo "
       
