@@ -121,14 +121,17 @@
       
       <div class='column'>
         <div class='callout'>
-          <p>".$row['Data_Prenotazione']."</p>
-          <p>POSTI DISPONIBILI: ".$row['Numero_Posti']."</p>
-          <p class='lead'>".$row['Titolo']."</p>
+        <form action= 'programma.php' method= 'GET'>
+          <p> <input type= 'text' value= '{$row['Data_Prenotazione']}' name= 'date'> </p>
+          <p>POSTI DISPONIBILI: {$row['Numero_Posti']}</p>
+          <p class='lead'><input type= 'text' value='{$row['Titolo']}' name= 'titolo'></p>
           <p class='subheader'>Indirizzo</p>
-          ".$row['Nome'].", ".$row['Indirizzo']."
+          {$row['Nome']}, {$row['Indirizzo']}
           <p class='subheader'>Contatti Telefonici</p>
-          ".$row['Numero']."<br>
-          <FORM action= 'programma.php' method= 'GET'><button type= 'submit'>Scopri il programma</button></FORM>
+          {$row['Numero']}<br>
+          <input type= 'submit' value= 'Scopri il programma'>
+          <a href= 'acquisto.php'> <input type= 'button' value= 'Compra Adesso'></a>
+        </form>
       </div>
     </div>
       
