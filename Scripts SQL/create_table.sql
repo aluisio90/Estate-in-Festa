@@ -136,7 +136,9 @@ CREATE TABLE ORCHESTRE(
 CREATE TABLE ORCHESTRALI(
 	Codice_Orchestrale INT(4) PRIMARY KEY,
 	Nome VARCHAR(50),
-	Data_Nascita DATE
+	Data_Nascita DATE,
+	Matricola INT(4) NOT NULL,
+	FOREIGN KEY(Matricola) REFERENCE ORCHESTRE(Matricola)
 	
 );
 
@@ -151,12 +153,4 @@ CREATE TABLE SUONANO(
 	 
 );
 
-CREATE TABLE APPARTENGONO(
-	Strumento_Suonato VARCHAR(25),
-	Matricola INT(4),
-	Codice_Orchestrale INT(4),
-	PRIMARY KEY (Matricola, Codice_Orchestrale),
-	
-	FOREIGN KEY(Codice_Orchestrale) REFERENCES ORCHESTRALI(Codice_Orchestrale) ON DELETE CASCADE,
-	FOREIGN KEY(Matricola) REFERENCES ORCHESTRE(Matricola) ON UPDATE CASCADE
-);
+
