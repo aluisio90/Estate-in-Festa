@@ -138,6 +138,7 @@ CREATE TABLE ORCHESTRALI(
 	Nome VARCHAR(50),
 	Data_Nascita DATE,
 	Matricola INT(4) NOT NULL,
+	Strumento_Suonato VARCHAR(25) NOT NULL,
 	FOREIGN KEY(Matricola) REFERENCE ORCHESTRE(Matricola)
 	
 );
