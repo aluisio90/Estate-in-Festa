@@ -78,7 +78,7 @@ CREATE TABLE PROGRAMMATI(
 	Codice_Concerto INT(8) NOT NULL,
 	Codice_Brano INT(8)NOT NULL,
 	
-	PRIMARY KEY( Codice_Concerto, Codice_Brano, Ordine),
+	PRIMARY KEY( Codice_Concerto, Ordine),
 	
 	FOREIGN KEY (Codice_Concerto) REFERENCES CONCERTI(Codice_Concerto) ON UPDATE CASCADE,
 	FOREIGN KEY (Codice_Brano) REFERENCES BRANI(Codice_Brano) ON DELETE CASCADE
