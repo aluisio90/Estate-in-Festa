@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -21,11 +19,11 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="http://localhost/Estate-in-Festa/home_page/">Home</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/negozio">Negozio</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/spettacoli">Spettacoli</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/contatti">Contatti</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/login">Login</a></li>
+        <li><a href="https://estateinmusica.altervista.org/">Home</a></li>
+        <li><a href="https://estateinmusica.altervista.org/negozio">Negozio</a></li>
+        <li><a href="https://estateinmusica.altervista.org/spettacoli">Spettacoli</a></li>
+        <li><a href="https://estateinmusica.altervista.org/contatti">Contatti</a></li>
+        <li><a href="https://estateinmusica.altervista.org/login">Login</a></li>
       </ul>
     </div>
   </div>
@@ -43,28 +41,6 @@
     <div class="show-for-large large-3 columns">
       <img src="https://placehold.it/400x370&text=PSR1257 + 12 C" alt="picture of space">
     </div>
-
-    <div class="medium-5 large-3 columns">
-      <div class="callout secondary">
-        <form>
-          <div class="row">
-            <div class="small-12 columns">
-              <h5>Cerca per periodo</h5>
-              <label>Inizio concerti
-                <input type="text" placeholder="da....">
-              </label>
-            </div>
-            <div class="small-12 columns">
-              <label>Fine concerti
-                <input type="number" placeholder="a....">
-              </label>
-              <button type="submit" class="button">Filtra</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-
   </div>
 
   <div class="row column">
@@ -89,49 +65,60 @@
           PRENOTATE.Data_Prenotazione,
           SALE_CONCERTI.Numero_Posti, 
           SALE_CONCERTI.Nome, 
-          SALE_CONCERTI.Indirizzo, 
-          TELEFONI.Tipologia, 
-          TELEFONI.Numero, 
+          SALE_CONCERTI.Indirizzo,  
           CONCERTI.Titolo,
           CONCERTI.Descrizione
         
           FROM 
           PRENOTATE, 
-          SALE_CONCERTI, 
-          TELEFONI, 
+          SALE_CONCERTI,  
           CONCERTI
         
           WHERE
           PRENOTATE.Codice_Sala = SALE_CONCERTI.Codice_Sala AND
-          PRENOTATE.Codice_Concerto = CONCERTI.Codice_Concerto AND
-          TELEFONI.Codice_Sala = SALE_CONCERTI.Codice_Sala; 
+          PRENOTATE.Codice_Concerto = CONCERTI.Codice_Concerto;
           ";
+          
+          $query_v = "
+          
+          SELECT TELEFONI.Tipologia, TELEFONI.Numero FROM TELEFONI, SALE_CONCERTI, PRENOTATE, CONCERTI
+          WHERE TELEFONI.Codice_Sala = SALE_CONCERTI.Codice_Sala AND PRENOTATE.Codice_Concerto = CONCERTI.Codice_Concerto AND 
+          PRENOTATE.Codice_Sala = SALE_CONCERTI.Codice_Sala;";
+          
         
-          $_r = mysqli_query($_db, $query); 
-            echo gettype($_r);
+          $_r = mysqli_query($_db, $query);
+          $rubrica = mysqli_query($query_v);
           mysqli_close($_db);
 
 
 
 
-
-    while( $row = mysqli_fetch_assoc($_r)){
-     
+	$numero = mysqli_fetch_array($rubrica);
+     print_r($numero);
+    while( $row = mysqli_fetch_assoc($_r) ){
       echo "
       
       <div class='column'>
         <div class='callout'>
-        <form action= 'programma.php' method= 'GET'>
-          <p> <input type= 'text' value= '{$row['Data_Prenotazione']}' name= 'date'> </p>
-          <p>POSTI DISPONIBILI: {$row['Numero_Posti']}</p>
-          <p class='lead'><input type= 'text' value='{$row['Titolo']}' name= 'titolo'></p>
-          <p class='subheader'>Indirizzo</p>
-          {$row['Nome']}, {$row['Indirizzo']}
-          <p class='subheader'>Contatti Telefonici</p>
-          {$row['Numero']}<br>
-          <input type= 'submit' value= 'Scopri il programma'>
-          <a href= 'acquisto.php'> <input type= 'button' value= 'Compra Adesso'></a>
-        </form>
+        
+          <form action= 'programma.php' method= 'GET'>
+            <p>Data dell'evento</p>
+            <p> <input type= 'text' value= '{$row['Data_Prenotazione']}' name= 'date'> </p>
+            <p>POSTI DISPONIBILI: <input type='text' value= '{$row['Numero_Posti']}' name='posti'></p>
+            <p>Nome dello spettacolo</p>
+            <p class='lead'><input type= 'text' value='{$row['Titolo']}' name= 'titolo'></p>
+            <p class='subheader'>Indirizzo</p>
+            <input type= 'text' value= '{$row['Nome']}' name= 'indirizzo>, <input type= 'text' value= '{$row['Indirizzo']}' name= 'sala'>
+            <p class='subheader'>Contatti Telefonici</p>
+            <input type= 'text' value= '{$numero}' name= 'numero'><br>
+            <p>Descrizione dell'evento</p>
+            <p>
+            <textarea rows='4' cols='50'>'{$row['Descrizione']}'</textarea>
+            </p>
+            <input type= 'submit' value= 'Scopri il programma'>
+            <a href= 'acquista.php'> <input type= 'button' value= 'Compra Adesso'></a>
+          </form>
+
       </div>
     </div>
       
@@ -145,7 +132,7 @@
     <!-- fine box-->
   </div>
   <footer>
-    <div class="row expanded callout secondary" />
+    <div class="row expanded callout secondary">
     <div class="row">
       <div class="medium-6 columns">
         <ul class="menu float-right">
