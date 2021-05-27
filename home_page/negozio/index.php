@@ -53,81 +53,109 @@
 
   <div class="row small-up-1 medium-up-2 large-up-3">
     <!-- inizio box informativo-->
-    <?php 
+    <?php
+          function get_out(){
+            echo "<button name= 'out' onclick= location.href= 'https://estateinmusica.altervista.org/negozio'>return Negozio</button>";
+          }
+
         $_db = mysqli_connect('my_estateinmusica');
 
-        if (mysqli_connect_error($_db) ) {
-          die("<h1> impossible start connection</h1>");
+        if ( mysqli_connect_error($_db) ) {
+          get_out();
+          die("<h1> impossible started connection</h1>");
         }
+
+        /*Select usefull database*/
         mysqli_select_db($_db, 'my_estateinmusica');
-          $query = "
-            SELECT 
+
+        /*setting query SQL to submit*/
+          /*GETTING EVENTI*/$query = "
+            SELECT
           PRENOTATE.Data_Prenotazione,
-          SALE_CONCERTI.Numero_Posti, 
-          SALE_CONCERTI.Nome, 
-          SALE_CONCERTI.Indirizzo,  
+          SALE_CONCERTI.Numero_Posti,
+          SALE_CONCERTI.Nome,
+          SALE_CONCERTI.Indirizzo,
           CONCERTI.Titolo,
-          CONCERTI.Descrizione
-        
-          FROM 
-          PRENOTATE, 
-          SALE_CONCERTI,  
+          CONCERTI.Descrizione,
+          CONCERTI.Prezzo,
+          CONCERTI.Codice_Concerto
+
+          FROM
+          PRENOTATE,
+          SALE_CONCERTI,
           CONCERTI
-        
+
           WHERE
           PRENOTATE.Codice_Sala = SALE_CONCERTI.Codice_Sala AND
           PRENOTATE.Codice_Concerto = CONCERTI.Codice_Concerto;
           ";
-          
-          $query_v = "
-          
+
+          /*GETTING NUMERI DI TELFONO*/
+
+          /*TODO $query_v = "
+
           SELECT TELEFONI.Tipologia, TELEFONI.Numero FROM TELEFONI, SALE_CONCERTI, PRENOTATE, CONCERTI
-          WHERE TELEFONI.Codice_Sala = SALE_CONCERTI.Codice_Sala AND PRENOTATE.Codice_Concerto = CONCERTI.Codice_Concerto AND 
+          WHERE TELEFONI.Codice_Sala = SALE_CONCERTI.Codice_Sala AND PRENOTATE.Codice_Concerto = CONCERTI.Codice_Concerto AND
           PRENOTATE.Codice_Sala = SALE_CONCERTI.Codice_Sala;";
-          
-        
-          $_r = mysqli_query($_db, $query);
-          $rubrica = mysqli_query($query_v);
+          */
+
+          /*Submit querys to MySQL database and check results */
+
+          if( ! $_r = mysqli_query($_db, $query) ) {
+            echo "Internal error, plese try again";
+            get_out();
+
+          }
           mysqli_close($_db);
 
 
 
 
-	$numero = mysqli_fetch_array($rubrica);
-     print_r($numero);
+	/* TODO$numero = mysqli_fetch_assoc($rubrica);*/
+  /*geting single row from result table*/
     while( $row = mysqli_fetch_assoc($_r) ){
       echo "
-      
+
       <div class='column'>
         <div class='callout'>
-        
-          <form action= 'programma.php' method= 'GET'>
+
+          <form action= 'buy.php' method= 'GET'>
             <p>Data dell'evento</p>
-            <p> <input type= 'text' value= '{$row['Data_Prenotazione']}' name= 'date'> </p>
-            <p>POSTI DISPONIBILI: <input type='text' value= '{$row['Numero_Posti']}' name='posti'></p>
+            <p> <input type= 'date' value= '{$row['Data_Prenotazione']}' name= 'date' readonly= 'readonly'> </p>
+
+            <p>POSTI DISPONIBILI: <input type='text' value= '{$row['Numero_Posti']}' name='posti' readonly= 'readonly'></p>
+
             <p>Nome dello spettacolo</p>
-            <p class='lead'><input type= 'text' value='{$row['Titolo']}' name= 'titolo'></p>
+            <p class='lead'><input type= 'text' value='{$row['Titolo']}' name= 'titolo' readonly= 'readonly'></p>
+
+            <p class='subheader'>Nome Sala</p>
+            <input type= 'text' name= 'sala' value= '{$row['Nome']}' readonly= 'readonly'>
+
             <p class='subheader'>Indirizzo</p>
-            <input type= 'text' value= '{$row['Nome']}' name= 'indirizzo>, <input type= 'text' value= '{$row['Indirizzo']}' name= 'sala'>
+            <input type= 'text' value= '{$row['Indirizzo']}' name= 'indirizzo' readonly= 'readonly'>
+
             <p class='subheader'>Contatti Telefonici</p>
-            <input type= 'text' value= '{$numero}' name= 'numero'><br>
+            <!--<input type= 'text' value= '' name= 'numero'><br>-->
             <p>Descrizione dell'evento</p>
             <p>
-            <textarea rows='4' cols='50'>'{$row['Descrizione']}'</textarea>
+            <textarea rows='4' cols='50' name= 'descrizione' readonly= 'readonly'>'{$row['Descrizione']}'</textarea>
             </p>
+
+            Prezzo del Biglietto(€) <input type= 'text' value= '{$row['Prezzo']}' name='prezzo' readonly= 'readonly'>
             <input type= 'submit' value= 'Scopri il programma'>
-            <a href= 'acquista.php'> <input type= 'button' value= 'Compra Adesso'></a>
+            <input type= 'hidden' name= 'codice' value= '{$row['Codice_Concerto']}'>
+            <a href= 'buy.php'> <input type= 'button' value= 'Compra Adesso' readonly= 'readonly'></a>
           </form>
 
       </div>
     </div>
-      
-      
+
+
       ";
-    
+
     }
-    
-    
+
+
     ?>
     <!-- fine box-->
   </div>
