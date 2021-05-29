@@ -37,7 +37,7 @@
 					<div class=\"blog-post\">
 						<p>
 							<div align= 'center'>
-								<img src= halt='logo'>
+								<img src='http://estateinmusica.altervista.org/resurce/Logo.png' halt='logo' higth = '150' width= '100'>
 							</div>
 
 							Ciao {$user['nomespettatore']} {$user['cognomespettatore']}, <br><br>
@@ -48,7 +48,7 @@
 							<hr>
 								<p>Codice del Biglietto {$user['matricolabiglietto']} </p>
 								<p>Data dell'evento {$user['dataprenotazione']} </p>
-
+								<p> {$user['Indirizzo']}</p>
 								<br><br>
 
 								<p>Descrizione dello spettacolo</p>
@@ -81,7 +81,7 @@
 
 						</p>
 						<div class=\"callout\">
-							<p>Goditi lo spettacolo , lo staf <i>\"Associazione Musicale Musicando\"</i>, dove la musica e' per te</p>
+							<p>Goditi lo spettacolo , lo staf <i>\"Associazione Culturale Musicando\"</i>, dove la musica e' per te</p>
 						</div>
 					</div>
 		</body>

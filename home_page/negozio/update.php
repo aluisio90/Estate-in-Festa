@@ -68,8 +68,7 @@
 
     $create_tiket = "INSERT INTO ACQUISTANO ( ID, Codice_Concerto) VALUES ('{$user[ID]}', '{$concerto}');";
     /*fixed one seat*/
-    mysqli_query("UPDATE SALE_CONCERTI SET Numero_Posti = (Numero_Posti-1) WHERE Codice_Concerto = {$concerto};");
-
+    mysqli_query($_db, "UPDATE SALE_CONCERTI SET Numero_Posti = (Numero_Posti-1) WHERE Codice_Concerto = '{$concerto}';");
     /*sumbit queries to create a new tiket*/
     if( !mysqli_query($_db, $create_tiket) ){
       echo "Impossibile emettere il biglietto.... possibilità di server sovraccarico riprovare più tardi.";

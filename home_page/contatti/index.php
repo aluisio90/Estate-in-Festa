@@ -14,16 +14,15 @@
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
-        <li class="menu-text">Musicando Corp.</li>
+        <li class="menu-text">Associazione Culturale Musicando</li>
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-      <li><a href="http://localhost/Estate-in-Festa/home_page/">Home</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/negozio">Negozio</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/spettacoli">Spettacoli</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/contatti">Contatti</a></li>
-        <li><a href="http://localhost/Estate-in-Festa/home_page/login">Login</a></li>
+        <li><a href="https://estateinmusica.altervista.org/">Home</a></li>
+        <li><a href="https://estateinmusica.altervista.org/negozio/">Negozio</a></li>
+        <li><a href="https://estateinmusica.altervista.org/contatti/">Contatti</a></li>
+        <li><a href="https://estateinmusica.altervista.org/login/">Login</a></li>
       </ul>
     </div>
   </div>
@@ -39,18 +38,16 @@
   <div class="row" id="content">
     <div class="medium-8 columns">
       <div class="blog-post">
-        <h3>Rimaniamo in contatto!</h3>
-        <img class="thumbnail" src="resurces/logo.jpg" hight= '100' width= '100'>
+        <h3><!-- mettere qualcosa qui .... --></h3>
+        <img class="thumbnail" src="logo.jpg" width= '200' higth= '200'>
         <p>
-		<br>
-		Se hai dubbi, problemi o ti servono informaioni
-		non esitare a contattarcia via email o chiama i nostri consenter
-		per tutto ciò che ti occorre
         </p>
         <div class="callout">
           <ul class="menu simple">
             <li><i><strong><div style="color:rgb(0, 153, 255);">Email</div></strong> estate.in.festa.help@musicando.it</i></li><br>
-            <li><i><strong><div style="color:rgb(0, 153, 255);">Numero di telefono</div></strong>+39 446 778 1978</i></li>
+            <li><i><strong><div style="color:rgb(0, 153, 255);">Numeri di telefono</div></strong></i></li><br>
+                <li><div style="color:rgb(0, 153, 255);">Segreteria</div>+39 446 778 1978</i></li><br>
+                <li><div style="color:rgb(0, 153, 255);">Call Center Sale</div>+39 998 112 8767</i></li>
           </ul>
         </div>
       </div>

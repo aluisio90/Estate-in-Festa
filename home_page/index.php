@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html class="no-js" lang="it">
 
@@ -14,16 +15,15 @@
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
-        <li class="menu-text">Musicando Corp.</li>
+        <li class="menu-text">Associazione Culturale Musicando </li>
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="http://localhost/Estate-in-Festa/home_page/">Home</a></li>
-        <li><a href="negozio/">Negozio</a></li>
-        <li><a href="spettacoli/">Spettacoli</a></li>
-        <li><a href="contatti/">Contatti</a></li>
-        <li><a href="login/">Login</a></li>
+        <li><a href="https://estateinmusica.altervista.org/">Home</a></li>
+        <li><a href="https://estateinmusica.altervista.org/negozio/">Negozio</a></li>
+        <li><a href="https://estateinmusica.altervista.org/contatti/">Contatti</a></li>
+        <li><a href="https://estateinmusica.altervista.org/login/">Login</a></li>
       </ul>
     </div>
   </div>
@@ -51,7 +51,7 @@
           <p><strong>E non preoccuparti se non ti sarà recapitata nessuna email per un errore nell’indirizzo email non ti sarà addebitato nessuno costo</strong>‼️</p>
           <p>Viva un’estate migliore con la musica, compra adesso il biglietto per un’estate indimenticabile. ⛵️</p>
           <p><em><strong>Musicando, la grande musica dalla A alla Z</strong></em></p>
-          <p><em>ps per contattarci visita la pagina <a href="">contatti</a> sia a tua disposizione</em>😄😄</p>
+          <p><em>ps per contattarci visita la pagina <a href="">contatti</a> siamo a tua disposizione</em>😄😄</p>
         </p>
         <div class="callout">
           <ul class="menu simple">

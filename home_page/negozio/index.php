@@ -14,14 +14,13 @@
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
-        <li class="menu-text">Musicando Corp.</li>
+        <li class="menu-text">Associazione Culturale Musicando</li>
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
         <li><a href="https://estateinmusica.altervista.org/">Home</a></li>
         <li><a href="https://estateinmusica.altervista.org/negozio">Negozio</a></li>
-        <li><a href="https://estateinmusica.altervista.org/spettacoli">Spettacoli</a></li>
         <li><a href="https://estateinmusica.altervista.org/contatti">Contatti</a></li>
         <li><a href="https://estateinmusica.altervista.org/login">Login</a></li>
       </ul>
@@ -39,7 +38,7 @@
     </div>
 
     <div class="show-for-large large-3 columns">
-      <img src="https://placehold.it/400x370&text=PSR1257 + 12 C" alt="picture of space">
+      <img src="https://estateinmusica.altervista.org/source/Logo.png" higth = '200' width= '150' alt="picture of space">
     </div>
   </div>
 
@@ -119,11 +118,9 @@
       <div class='column'>
         <div class='callout'>
 
-          <form action= 'buy.php' method= 'GET'>
+          <form method= 'GET' action= 'buy.php'>
             <p>Data dell'evento</p>
-            <p> <input type= 'date' value= '{$row['Data_Prenotazione']}' name= 'date' readonly= 'readonly'> </p>
-
-            <p>POSTI DISPONIBILI: <input type='text' value= '{$row['Numero_Posti']}' name='posti' readonly= 'readonly'></p>
+            <p> <input type= 'datetime' value= '{$row['Data_Prenotazione']}' name= 'date' readonly= 'readonly'> </p>
 
             <p>Nome dello spettacolo</p>
             <p class='lead'><input type= 'text' value='{$row['Titolo']}' name= 'titolo' readonly= 'readonly'></p>
@@ -142,9 +139,11 @@
             </p>
 
             Prezzo del Biglietto(€) <input type= 'text' value= '{$row['Prezzo']}' name='prezzo' readonly= 'readonly'>
-            <input type= 'submit' value= 'Scopri il programma'>
+
+            <!-- button -->
             <input type= 'hidden' name= 'codice' value= '{$row['Codice_Concerto']}'>
-            <a href= 'buy.php'> <input type= 'button' value= 'Compra Adesso' readonly= 'readonly'></a>
+            <!-- button -->
+            <a href= 'buy.php'> <input type= 'submit' value= 'Info e Acquista' ></a>
           </form>
 
       </div>
@@ -164,7 +163,7 @@
     <div class="row">
       <div class="medium-6 columns">
         <ul class="menu float-right">
-          <li class="menu-text">Copyright</li>
+          <li class="menu-text">sito protteto da Copyright</li>
         </ul>
       </div>
     </div>
